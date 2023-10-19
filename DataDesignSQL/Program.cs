@@ -88,7 +88,7 @@ namespace DataDesignSQL
                 {
                     
                     conn.Open();
-                    string inlineSQL = $@"INSERT [dbo].[Produce] ([Name], [Location], [Price], [UoM], [Sell_by_Date]) VALUES ('{prod.Name}', '{prod.Location}', '{prod.Price}', '{prod.UoM}', '{prod.SellByDate}')";
+                    string inlineSQL = $@"INSERT [dbo].[Produce] ([Name], [Location], [Price], [UoM], [Sell_by_Date]) VALUES ('{prod.Name}', '{prod.Location}', {prod.Price}, '{prod.UoM}', '{prod.SellByDate}')";
                     using (var command = new SqlCommand(inlineSQL, conn))
                     {
                         var query = command.ExecuteNonQuery();
